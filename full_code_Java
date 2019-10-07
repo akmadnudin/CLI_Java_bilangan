@@ -1,0 +1,117 @@
+package latihanbilang;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author hka7
+ */
+public class allprogram {
+
+    public static void main(String[] args) {
+        //membuat code tanya jawab
+        Scanner scan = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Sebelum Menggunakan program ini kamu harus berkenalan dulu");
+
+        System.out.println("Namanya Siapa mas..? lalu tekan enter:");
+        String name = scan.nextLine();
+        System.out.println("Hallo : " + name);
+        Scanner baca = new Scanner(System.in);
+        System.out.println("saya ingin tahu kamu dulu : [1.ok 2.tidak]");
+        int jawab = baca.nextInt();
+        if (jawab == 1) {
+            System.out.println("Apakah Anda Ganteng [1.ya 2.tidak]");
+
+            jawab = baca.nextInt();
+            switch (jawab) {
+                case 1:
+                    System.out.println("Bohong saja kau grandong");
+                    break;
+                case 2:
+                    System.out.println("Oklah lanjut");
+                    System.out.println("Saya memaklumi anda");
+                    break;
+                default:
+                    System.out.println("Mas Pilihannya 1 atau 2 jangan yang lainnya.");
+                     System.exit(0);
+                    break;
+                   
+            }
+
+        }
+        System.out.println("");
+        //ini batas akhir coding tanya jawab nama
+
+        Scanner tnya = new Scanner(System.in); //ini kode pilihan
+        System.out.println("silakan kamu pilih salah satu program yang ingin anda buat");
+        System.out.println("1.Decimal to hexa to binery to octal");
+        System.out.println("2.hexa to decimal to binery to octal");
+        System.out.println("3.Binery to decimal to hexa to octal");
+        System.out.println("4.octal to decimal to binery to hexa");
+        //batas code
+
+        int num = tnya.nextInt(); //ini sebagi pemanggil setiap angka yang kita masukan dengan nama pemanggil 'num'
+        if (num == 1) {
+            //ini untuk kode bilangan desimal
+            System.out.println("Masukan Variabel/angka desimalnya mas..?lalu tekan enter:");
+            num = tnya.nextInt();
+            System.out.println("Hallo : " + name);
+            System.out.println("Kamu memasukan Angka decimal :" + num);
+            System.out.println("Ini Hasil bilangan Binery :" + Integer.toBinaryString(num));
+            System.out.println("Ini Hasil Bilangan octal:" + Integer.toOctalString(num));
+            System.out.println("ini Bilangan hexa decimal :" + Integer.toHexString(num));
+        }
+        if (num == 2) { //ini bilangan hexa
+            String hexadecimal;
+            System.out.println(" Masukan angka hexanya : ");
+            hexadecimal = sc.nextLine();
+            int decimal;
+            String octal, binary;
+            decimal = Integer.parseInt(hexadecimal, 16);
+            binary = Integer.toBinaryString(decimal);
+            octal = Integer.toOctalString(decimal);
+            System.out.println("Hallo : " + name);
+            System.out.println("Kamu memasukan Bilangan hexanya : " + hexadecimal);
+            System.out.println("Ini Hasil Bilangan desimal : " + decimal);
+            System.out.println("Ini Hasil Bilangan octal : " + octal);
+            System.out.println("Ini Hasil Bilangan binery : " + binary);
+
+        }
+        if (num == 3) { //ini kode bilangan biner
+            String binary;
+            System.out.println(" karena bilangan binner 0 dan 1 maka selain itu akan error : [Y/N]");
+
+            System.out.println(" Masukan Bilangan Binnernya : ");
+
+            binary = sc.nextLine();
+            int decimal;
+            String octal, hexadecimal;
+            decimal = Integer.parseInt(binary, 2); //2 adalah karena bilangan biner cuma ada dua 0 dan 1
+            hexadecimal = Integer.toHexString(decimal);
+            octal = Integer.toOctalString(decimal);
+            System.out.println("Hallo : " + name);
+            System.out.println("Kamu memasukan Bilangan Binner : " + binary);
+            System.out.println("Ini Hasil Bilangan hexanya   : " + hexadecimal);
+            System.out.println("Ini Hasil Bilangan desimal   : " + decimal);
+            System.out.println("Ini Hasil Bilangan octal     : " + octal);
+        } //ini batas bilangan biner
+        
+        if (num == 4) { //ini kode bilangan octal
+            String octal;
+            System.out.println("bilangan octal ini 1-8 jika ada angka 9 maka akan error");
+            System.out.println(" Masukan Bilangan Octalnya : ");
+            octal = sc.nextLine();
+            int decimal;
+            String binary, hexadecimal;
+            decimal = Integer.parseInt(octal, 8); //8 adalah karena bilangan octal dibagi 8
+            hexadecimal = Integer.toHexString(decimal);
+            binary = Integer.toBinaryString(decimal);
+            System.out.println("Hallo : " + name);
+            System.out.println("Kamu memasukan Bilangan octal     : " + octal);
+            System.out.println("Ini Hasil Bilanganhexanya   : " + hexadecimal);
+            System.out.println("Ini Hasil Bilangan desimal   : " + decimal);
+
+        } //ini batas bilangan octal
+    }
+}
